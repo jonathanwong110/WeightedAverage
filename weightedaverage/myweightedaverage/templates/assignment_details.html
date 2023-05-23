@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{assignment.name}} - {{assignment.task}}...
+{% endblock %}
+
+{% block content %}
+
+<h1>{{assignment.name}}</h1>
+<h2>{{assignment.task}}</h2>
+<br/>
+<hr>
+<h3>{{assignment.grade}}</h3>
+<h3>{{assignment.weight}}</h3>
+
+<br/><br/>
+<a class="btn btn-primary" href="{% url 'home' %}">Back</a>
+
+{% endblock %}
