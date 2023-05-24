@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Assignment
+from .forms import AssignmentForm
 
 
 # def home(request):
@@ -18,5 +19,6 @@ class AssignmentDetailView(DetailView):
 
 class AddAssignmentView(CreateView):
     model = Assignment
+    form_class = AssignmentForm
     template_name = 'add_assignment.html'
-    fields = '__all__'
+    # fields = '__all__'
