@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Assignment
 
 
@@ -14,3 +14,9 @@ class HomeView(ListView):
 class AssignmentDetailView(DetailView):
     model = Assignment
     template_name = 'assignment_details.html'
+
+
+class AddAssignmentView(CreateView):
+    model = Assignment
+    template_name = 'add_assignment.html'
+    fields = '__all__'

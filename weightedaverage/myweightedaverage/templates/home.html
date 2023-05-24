@@ -6,9 +6,13 @@
 
 <ul>
     {% for assignment in object_list %}
-    <li><a href="{% url 'assignment-detail' assignment.pk %}">{{ assignment.name }}</a> - {{ assignment.task }} <br/>
-        {{ assignment.grade }}
-        {{ assignment.weight }}
+    <li>
+        <a href="{% url 'assignment-detail' assignment.pk %}">
+            {{ assignment.name }}
+        </a> - <b>{{ assignment.task }} </b>
+        <br/>
+        <b>Grade: </b>{{ assignment.grade }}
+        <b>Weight: </b>{{ assignment.weight }}
     </li>
     {% endfor %}
 </ul>
