@@ -17,6 +17,12 @@
                 (Edit)
             </a>
         </small>
+        -
+        <small>
+            <a href="{% url 'delete_assignment' assignment.pk %}">
+                (Delete)
+            </a>
+        </small>
         <br/>
         <b>Grade: </b>{{ assignment.grade }}
         <b>Weight: </b>{{ assignment.weight }}

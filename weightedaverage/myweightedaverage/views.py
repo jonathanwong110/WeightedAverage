@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Assignment
 from .forms import AssignmentForm
+from django.urls import reverse_lazy
 
 
 # def home(request):
@@ -29,3 +30,9 @@ class UpdateAssignmentView(UpdateView):
     form_class = AssignmentForm
     template_name = 'update_assignment.html'
     # fields = '__all__'
+
+
+class DeleteAssignmentView(DeleteView):
+    model = Assignment
+    template_name = 'delete_assignment.html'
+    success_url = reverse_lazy('home')
