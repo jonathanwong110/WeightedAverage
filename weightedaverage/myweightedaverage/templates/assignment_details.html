@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 {% block title %}
-    {{assignment.name}} - {{assignment.task}}...
+{{assignment.name}} - {{assignment.task}}...
 {% endblock %}
 
 {% block content %}
 
 <h1>{{assignment.name}}</h1>
 <h2>{{assignment.task}}</h2>
+<small>
+    <a href="{% url 'update_assignment' assignment.pk %}">
+        (Edit)
+    </a>
+</small>
 <br/>
 <hr>
 <h3>{{assignment.grade}}</h3>

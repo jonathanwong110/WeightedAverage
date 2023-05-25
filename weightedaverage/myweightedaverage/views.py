@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Assignment
 from .forms import AssignmentForm
 
@@ -21,4 +21,11 @@ class AddAssignmentView(CreateView):
     model = Assignment
     form_class = AssignmentForm
     template_name = 'add_assignment.html'
+    # fields = '__all__'
+
+
+class UpdateAssignmentView(UpdateView):
+    model = Assignment
+    form_class = AssignmentForm
+    template_name = 'update_assignment.html'
     # fields = '__all__'
