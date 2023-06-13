@@ -14,6 +14,30 @@
         GradeCalc
         {% endblock%}
     </title>
+
+    <script>
+        function handleOnClick() {
+            let average = 0
+            let totalWeight = 0
+
+            const weights = document.getElementsByClassName("weight")
+
+            for (const weight of weights) {
+                totalWeight += weight.outerText * 1
+            }
+
+            const weightedGrades = document.getElementsByClassName("weightedGrade")
+
+            for (const grade of weightedGrades) {
+                average += grade.outerText * 1
+            }
+
+            const weightedAverage = Math.round(average/totalWeight * 10000) / 10000 * 100
+
+            document.getElementById("average").innerHTML = weightedAverage
+
+        }
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

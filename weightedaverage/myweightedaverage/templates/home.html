@@ -24,13 +24,22 @@
             </a>
         </small>
         <br/>
-        <b>Grade: </b>{{ assignment.grade }}
-        <b>Weight: </b>{{ assignment.weight }}
+        <b>Grade: </b><br/>{{ assignment.grade }}</br>
+        <b>Weight: </b>
+        <div class="weight">{{ assignment.weight }}</div>
+        <b>Weighted Grade: </b>
+        <div class="weightedGrade">{% widthratio assignment.grade 100 assignment.weight %}</div>
 <!--    </li>-->
     {% endfor %}
 <!--</ul>-->
 <hr>
 
-<!--{{ object_list|length }}-->
+<b>Assignments:</b> {{ object_list|length }}
+<br/><br/>
+
+<b>Grade:</b> <div id="average"></div>
+<br/><br/>
+
+<button class="btn btn-primary" onclick="handleOnClick()">Calculate Grade</button>
 
 {% endblock %}
